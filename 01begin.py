@@ -43,14 +43,14 @@ cap.release()
 cv2.destroyAllWindows()
 
 # 비디오카메라 읽기
-cap = cv2.VideoCapture(0)               # 0번 카메라 장치 연결 ---①
-if cap.isOpened():                      # 캡쳐 객체 연결 확인
+cap = cv2.VideoCapture(0)
+if cap.isOpened():
     while True:
-        ret, img = cap.read()           # 다음 프레임 읽기
+        ret, img = cap.read()
         if ret:
-            cv2.imshow('camera', img)   # 다음 프레임 이미지 표시
-            if cv2.waitKey(1) != -1:    # 1ms 동안 키 입력 대기 ---②
-                break                   # 아무 키라도 입력이 있으면 중지
+            cv2.imshow('camera', img)
+            if cv2.waitKey(1) != -1:
+                break
         else:
             print('no frame')
             break
@@ -60,14 +60,14 @@ cap.release()
 cv2.destroyAllWindows()
 
 # 사진찍기
-cap = cv2.VideoCapture(0)                       # 0번 카메라 연결
+cap = cv2.VideoCapture(0)
 if cap.isOpened() :
     while True:
-        ret, frame = cap.read()                 # 카메라 프레임 읽기
+        ret, frame = cap.read()
         if ret:
-            cv2.imshow('camera',frame)          # 프레임 화면에 표시
-            if cv2.waitKey(1) != -1:            # 아무 키나 누르면
-                cv2.imwrite('./img/photo.jpg', frame) # 프레임을 'photo.jpg'에 저장
+            cv2.imshow('camera',frame)
+            if cv2.waitKey(1) != -1:
+                cv2.imwrite('./img/photo.jpg', frame)
                 break
         else:
             print('no frame!')
