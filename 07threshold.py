@@ -57,3 +57,19 @@ cv2.imshow('paper', img)
 print(f'{t=}')
 cv2.waitKey()
 cv2.destroyAllWindows()
+
+# 적응형 문턱값 적용: 주위값에 따라 달라지게, blk_size = 9
+blk_size = 9
+C = 5
+img = cv2.imread('./img/sudoku.png', cv2.IMREAD_GRAYSCALE)
+t, thresh_otsh = cv2.threshold(img, -1, 255, cv2.THRESH_BINARY | cv2.THRESH_OTSU)
+th2G = cv2.adaptiveThreshold(img, 255, cv2.ADAPTIVE_THRESH_GAUSSIAN_C, cv2.THRESH_BINARY, blk_size, C)
+th2M = cv2.adaptiveThreshold(img, 255, cv2.ADAPTIVE_THRESH_MEAN_C, cv2.THRESH_BINARY, blk_size, C)
+
+print(f'{t=}')
+cv2.imshow('img', img)
+cv2.imshow('otsh', thresh_otsh)
+cv2.imshow('G', th2G)
+cv2.imshow('M', th2M)
+cv2.waitKey()
+cv2.destroyAllWindows()
