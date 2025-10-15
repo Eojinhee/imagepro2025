@@ -24,6 +24,7 @@ if w and h:
     roi = img[y:y+h, x:x+w]
     cv2.imshow("roi", roi)
     cv2.imwrite("sunsetroi.jpg", roi)
+
 cv2.imshow("img", img)
 cv2.waitKey()
 cv2.destroyAllWindows()
