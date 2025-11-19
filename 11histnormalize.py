@@ -27,6 +27,10 @@ img_normcv = cv2.normalize(img, None, 0, 255, cv2.NORM_MINMAX)
 hist_norm = cv2.calcHist([img_norm], [0], None, [256], [0, 256])
 hist_normcv = cv2.calcHist([img_normcv], [0], None, [256], [0, 256])
 
+
+
+   
+
 cv2.imshow('imgnorm', img_norm)
 cv2.imshow('org', img)
 cv2.imshow('normcv', img_normcv)
