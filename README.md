@@ -1,2 +1,2 @@
-# Imagepro2025
-신구대학교 Image 수업 
+# Imagepro2025 
+대학교Image 수업 
